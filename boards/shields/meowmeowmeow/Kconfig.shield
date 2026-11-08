@@ -1,0 +1,5 @@
+config SHIELD_MEOWMEOWMEOW_LEFT
+    def_bool $(shields_list_contains,meowmeowmeow_left)
+
+config SHIELD_MEOWMEOWMEOW_RIGHT
+    def_bool $(shields_list_contains,meowmeowmeow_right)
