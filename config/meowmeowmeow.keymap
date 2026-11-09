@@ -2,16 +2,45 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NEW_BEHAVIOR";
+            bindings = <&to>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        commaapostrophe: new_behaviorr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "comma,apostophe";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "Base";
             bindings = <
-&kp N1  &kp Q  &kp W  &kp E     &kp R      &kp T      &kp Y     &kp U    &kp I      &kp O    &kp P     &kp N4
-&kp N2  &kp A  &kp S  &kp D     &kp F      &kp G      &kp H     &kp J    &kp K      &kp L    &kp SEMI  &kp N5
-&kp N3  &kp Z  &kp X  &kp C     &kp V      &kp B      &kp N     &kp M    &kp COMMA  &kp DOT  &kp FSLH  &kp N6
-                      &kp LGUI  &kp LSHFT  &kp SPACE  &kp BSPC  &kp RET  &kp RGUI
+&kp ESCAPE        &kp Q  &kp W  &kp E                         &kp R      &kp T      &kp Y          &kp U      &kp I                              &kp O    &kp P                                    &kp MINUS
+&kp TAB           &kp A  &kp S  &kp D                         &kp F      &kp G      &kp H          &kp J      &kp K                              &kp L    &commaapostrophe LEFT_BRACKET SEMICOLON  &kp RIGHT_BRACKET
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C                         &kp V      &kp B      &kp N          &kp M      &commaapostrophe APOSTROPHE COMMA  &kp DOT  &kp FSLH                                 &kp RIGHT_SHIFT
+                                &new_behavior 1 LEFT_COMMAND  &kp LSHFT  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp RIGHT_COMMAND
+            >;
+        };
+
+        layer_1 {
+            bindings = <
+&trans  &kp SLASH  &kp N0     &kp N1  &kp N2                                          &kp N3                                               &kp F1  &kp F2   &kp F3   &kp F4   &kp LBKT  &kp RBKT
+&trans  &kp X      &kp PLUS   &kp N4  &kp N5                                          &kp N6                                               &kp F5  &kp F6   &kp F7   &kp F8   &trans    &trans
+&trans  &trans     &kp MINUS  &kp N7  &kp N8                                          &kp N9                                               &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans
+                              &to 0   &commaapostrophe LEFT_BRACKET LEFT_PARENTHESIS  &commaapostrophe RIGHT_BRACKET KP_RIGHT_PARENTHESIS  &trans  &trans   &trans
             >;
         };
     };
