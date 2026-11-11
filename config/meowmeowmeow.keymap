@@ -38,10 +38,10 @@
 
         layer_1 {
             bindings = <
-&trans  &kp SLASH  &kp N0     &kp N1  &kp N2                                          &kp N3                                               &kp F1  &kp F2   &kp F3   &kp F4   &kp LBKT  &kp RBKT
-&trans  &kp X      &kp PLUS   &kp N4  &kp N5                                          &kp N6                                               &kp F5  &kp F6   &kp F7   &kp F8   &trans    &trans
-&trans  &trans     &kp MINUS  &kp N7  &kp N8                                          &kp N9                                               &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans
-                              &to 0   &commaapostrophe LEFT_BRACKET LEFT_PARENTHESIS  &commaapostrophe RIGHT_BRACKET KP_RIGHT_PARENTHESIS  &trans  &trans   &trans
+&trans  &kp SLASH  &kp N0     &kp N1  &kp N2  &kp N3          &kp F1  &kp F2   &kp F3   &kp F4   &kp LBKT  &kp RBKT
+&trans  &kp X      &kp PLUS   &kp N4  &kp N5  &kp N6          &kp F5  &kp F6   &kp F7   &kp F8   &trans    &trans
+&trans  &trans     &kp MINUS  &kp N7  &kp N8  &kp N9          &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans
+                              &to 0   &kp AT  &kp LEFT_SHIFT  &trans  &trans   &trans
             >;
         };
     };
